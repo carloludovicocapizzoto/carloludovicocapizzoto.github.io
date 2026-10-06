@@ -375,3 +375,17 @@ strong { font-weight: 600; }
 .music-list span { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
 .shelf-col .chips { margin-top: 0; }
 @media (max-width: 900px) { .shelf-grid { grid-template-columns: 1fr; gap: 16px; } }
+
+/* Esclusività */
+.interest-feature {
+  margin-bottom: 40px; padding: clamp(28px, 4vw, 44px);
+  border-radius: var(--radius); background: var(--accent-soft);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 8px 48px; align-items: end;
+}
+.interest-feature .eyebrow { grid-column: 1 / -1; margin-bottom: 4px; }
+.interest-feature h3 {
+  margin: 0; font-family: var(--serif); font-weight: 400;
+  font-size: clamp(40px, 6vw, 68px); line-height: 1; letter-spacing: -.03em; color: var(--accent);
+}
+.interest-feature p:last-child { margin: 0; font-size: 17px; color: var(--text); max-width: 34em; }
+@media (max-width: 680px) { .interest-feature { grid-template-columns: 1fr; gap: 12px; } }
