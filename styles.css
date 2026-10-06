@@ -336,7 +336,7 @@ strong { font-weight: 600; }
 .skill-highlight strong { font-family: var(--serif); font-size: 22px; color: var(--accent); font-weight: 500; }
 .muted-date { color: var(--faint); }
 
-.interests { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 28px; }
+.interests { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 28px; }
 .interest { border-top: 2px solid var(--text); padding-top: 18px; }
 .interest-num { margin: 0; font-family: var(--serif); font-size: 30px; line-height: 1.1; color: var(--accent); letter-spacing: -.02em; }
 .interest-num span { font-size: 18px; }
@@ -389,3 +389,71 @@ strong { font-weight: 600; }
 }
 .interest-feature p:last-child { margin: 0; font-size: 17px; color: var(--text); max-width: 34em; }
 @media (max-width: 680px) { .interest-feature { grid-template-columns: 1fr; gap: 12px; } }
+
+/* ---------- Anteprima Excel ---------- */
+.card-excel { margin-top: 20px; }
+.card-excel > p { max-width: 44em; }
+.xl {
+  margin: 28px 0 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  background: var(--bg); font-size: 13.5px;
+}
+.xl-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--line); background: var(--surface); }
+.xl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+.xl-file { margin-left: 8px; font-weight: 600; color: var(--muted); font-size: 12.5px; }
+.xl-sample { margin-left: auto; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); background: var(--accent-soft); padding: 3px 9px; border-radius: 999px; }
+.xl-body { display: grid; grid-template-columns: 1.45fr 1fr; }
+.xl-pane { padding: 18px; min-width: 0; }
+.xl-pane + .xl-pane { border-left: 1px solid var(--line); }
+.xl .xl-pane-title { margin: 0 0 10px; font: 600 11.5px/1 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--faint); }
+.xl .xl-mt { margin-top: 24px; }
+.xl-log { overflow-x: auto; }
+.xl table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.xl th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; padding: 6px 8px; border-bottom: 1px solid var(--line); background: var(--surface); }
+.xl td { padding: 7px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.xl .num { text-align: right; }
+.xl-tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+.t-groc { background: color-mix(in srgb, #16a34a 16%, transparent); color: #15803d; }
+.t-trans { background: color-mix(in srgb, #2563eb 14%, transparent); color: #1d4ed8; }
+.t-fixed { background: color-mix(in srgb, #9333ea 14%, transparent); color: #7e22ce; }
+.t-disc { background: var(--accent-soft); color: var(--accent); }
+.t-inv { background: color-mix(in srgb, #0891b2 15%, transparent); color: #0e7490; }
+:root[data-theme="dark"] .t-groc { color: #4ade80; } :root[data-theme="dark"] .t-trans { color: #93b4ff; }
+:root[data-theme="dark"] .t-fixed { color: #d8b4fe; } :root[data-theme="dark"] .t-inv { color: #67e8f9; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .t-groc { color: #4ade80; } :root:not([data-theme="light"]) .t-trans { color: #93b4ff; }
+  :root:not([data-theme="light"]) .t-fixed { color: #d8b4fe; } :root:not([data-theme="light"]) .t-inv { color: #67e8f9; }
+}
+.xl-note { margin: 10px 0 0 !important; font-size: 12.5px !important; color: var(--muted); }
+.xl-stack { display: flex; height: 14px; border-radius: 7px; overflow: hidden; gap: 2px; }
+.s1 { background: var(--accent); }
+.s2 { background: color-mix(in srgb, var(--accent) 65%, var(--bg)); }
+.s3 { background: color-mix(in srgb, var(--accent) 40%, var(--bg)); }
+.s4 { background: color-mix(in srgb, var(--text) 55%, var(--bg)); }
+.xl-legend { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
+.xl-legend li { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+.xl-legend i { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.xl-legend b { margin-left: auto; color: var(--text); font-weight: 600; }
+.xl-bars { display: flex; align-items: flex-end; gap: 10px; height: 110px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.xl-bars div { position: relative; flex: 1; height: var(--h); background: color-mix(in srgb, var(--text) 18%, var(--bg)); border-radius: 4px 4px 0 0; }
+.xl-bars div.cur { background: var(--accent); }
+.xl-bars span { position: absolute; bottom: -18px; left: 0; right: 0; text-align: center; font-size: 11px; color: var(--faint); }
+.xl-tabs { display: flex; gap: 2px; padding: 0 10px; border-top: 1px solid var(--line); background: var(--surface); overflow-x: auto; }
+.xl-tabs span { padding: 7px 12px; font-size: 12px; color: var(--muted); white-space: nowrap; }
+.xl-tabs span.on { color: var(--text); font-weight: 600; box-shadow: inset 0 2px 0 var(--accent); background: var(--bg); }
+@media (max-width: 760px) {
+  .xl-body { grid-template-columns: 1fr; }
+  .xl-pane + .xl-pane { border-left: 0; border-top: 1px solid var(--line); }
+}
+@media (max-width: 520px) {
+  .xl th:first-child, .xl td:first-child { display: none; }
+  .xl th, .xl td { padding: 6px 5px; }
+  .xl-pane { padding: 14px; }
+  .xl-file { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .xl-sample { white-space: nowrap; }
+}
+@media (max-width: 520px) {
+  .xl { font-size: 12.5px; }
+  .xl td:nth-child(2) { white-space: normal; }
+  .xl-tag { font-size: 11px; padding: 2px 6px; }
+  .card-excel { padding: 20px; }
+}
