@@ -194,7 +194,11 @@ const IT = {
   "exp.pogo.desc": "Shooting fotografico professionale per i contenuti visivi del brand, un'esperienza da vicino di visual storytelling e direzione creativa.",
   "edu.ainis.date": "Set 2018 — Lug 2023",
   "edu.ainis.name": "Liceo musicale Emilio Ainis",
-  "edu.ainis.desc": "Storia della musica, tecnologie musicali, analisi e composizione: teoria, esecuzione e produzione digitale.",
+  "edu.ainis.desc": "Voto finale: 95/100",
+  "edu.ainis.c1": "Teoria, analisi e composizione",
+  "edu.ainis.c2": "Tecnologie musicali",
+  "edu.ainis.c3": "Musica d'insieme",
+  "edu.ainis.c4": "Primo strumento",
 };
 
 const root = document.documentElement;
