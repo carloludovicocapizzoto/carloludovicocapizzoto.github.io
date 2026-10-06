@@ -16,7 +16,7 @@ const IT = {
   "stat.tickets": "biglietti venduti",
   "stat.social": "crescita social in 2 mesi, 0 ads",
   "stat.revenue": "ricavo medio per evento",
-  "stat.blab": "partecipanti a Blab to the Park",
+  "stat.team": "persone che guido in GrowMi",
   "about.title": "Chi sono",
   "about.lead": "Sono nato a Messina, ho 21 anni e mi piace far crescere le cose da zero: eventi, community, prodotti.",
   "about.p1": "Mi sono laureato in <strong>CLEACC</strong> all'Università Bocconi (Economics and Management for Arts, Culture and Communication) con una tesi sulla brand communication nell'hospitality di lusso. Da settembre 2026 frequento l'<strong>MSc in Digital Marketing &amp; Data Analytics</strong> a <strong>Emlyon Business School</strong>, a Parigi.",
