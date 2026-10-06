@@ -154,6 +154,10 @@ const EN = {
   "int.excl.title": "<em>Exclusivity</em>",
   "int.excl.desc": "It's something I pay attention to in everything, from food to clothes to any other choice: I look for what is rare, refined and made with quality. It's no coincidence my thesis is about luxury hospitality.",
   "skills.stripe": "Stripe (payments &amp; checkout)",
+  "int.code.desc": "I like building the tools I need myself: GrowMi's website and ticketing software, and this very site.",
+  "int.excel.num": "Automation",
+  "int.excel.title": "Expense tracker in Excel",
+  "int.excel.desc": "I built an automated Excel file to keep track of my personal expenses.",
 };
 
 const root = document.documentElement;

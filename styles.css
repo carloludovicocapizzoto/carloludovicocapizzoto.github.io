@@ -336,7 +336,7 @@ strong { font-weight: 600; }
 .skill-highlight strong { font-family: var(--serif); font-size: 22px; color: var(--accent); font-weight: 500; }
 .muted-date { color: var(--faint); }
 
-.interests { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.interests { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 28px; }
 .interest { border-top: 2px solid var(--text); padding-top: 18px; }
 .interest-num { margin: 0; font-family: var(--serif); font-size: 30px; line-height: 1.1; color: var(--accent); letter-spacing: -.02em; }
 .interest-num span { font-size: 18px; }
