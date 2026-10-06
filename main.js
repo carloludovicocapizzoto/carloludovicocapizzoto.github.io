@@ -125,7 +125,7 @@ const IT = {
   "int.code.desc": "Mi piace costruire da solo gli strumenti che mi servono: il sito e il software di ticketing di GrowMi, e anche questo sito.",
   "int.excel.num": "Automazione",
   "int.excel.title": "Excel per le spese",
-  "int.excel.desc": "Ho creato un file Excel automatico per tenere il conto delle mie spese personali. <a href=\"#projects\">Guarda l'anteprima ↑</a>",
+  "int.excel.desc": "Ho creato un file Excel automatico per tenere il conto delle mie spese personali. <a href=\"quadro/\">Guarda Quadro ↗</a>",
   "shelf.title": "Cosa leggo, ascolto e guardo",
   "shelf.books": "Libri",
   "shelf.goleman": "Intelligenza emotiva",
@@ -157,9 +157,9 @@ const IT = {
   "int.food.num": "Cura di sé",
   "int.food.title": "Alimentazione",
   "int.food.desc": "Sto molto attento a cosa mangio: prendermi cura di me parte dalla tavola.",
-  "proj.xl.tag": "Progetto personale · Excel &amp; VBA",
-  "proj.xl.title": "Gestione delle finanze personali",
-  "proj.xl.desc": "Il file Excel che uso come diario di bordo delle mie finanze. Registro ogni spesa una volta sola; una macro VBA inserisce l'importo sotto la sua categoria, le formule calcolano i totali e dividono le entrate con la regola 55-20-15-10, e i grafici confrontano le spese mese per mese e sull'intero anno.",
+  "proj.xl.tag": "Il mio prodotto · Excel &amp; Google Sheets",
+  "proj.xl.title": "Quadro — your money, in four",
+  "proj.xl.desc": "Un budget planner che ho progettato e costruito e che ora è un prodotto: è nato come il foglio che usavo per le mie finanze. Registri una spesa una volta sola e Quadro la mette nella sezione giusta, divide le entrate con la regola 55-20-15-10, porta gli avanzi al mese dopo e segue investimenti e PAC, con un riepilogo annuale per confrontare i mesi. <a href=\"quadro/\">Scopri Quadro e provalo gratis →</a>",
   "chip.charts": "Grafici",
   "xl.label": "Anteprima del file con dati di esempio",
   "xl.sample": "Dati di esempio",
@@ -199,6 +199,7 @@ const IT = {
   "edu.ainis.c2": "Tecnologie musicali",
   "edu.ainis.c3": "Musica d'insieme",
   "edu.ainis.c4": "Primo strumento",
+  "chip.product": "Lancio di prodotto",
 };
 
 const root = document.documentElement;
