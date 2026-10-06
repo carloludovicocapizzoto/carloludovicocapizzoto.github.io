@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://carlocapizzoto.netlify.app/sitemap.xml
+Sitemap: https://carloludovicocapizzoto.github.io/sitemap.xml
