@@ -133,6 +133,21 @@ const EN = {
   "m.participation": "participation",
   "proj.thesis.tag": "Bachelor's thesis · Bocconi",
   "proj.thesis.desc": "The case of Villa d'Este La Collezione: how a luxury hotel group builds and communicates its brand, drawing on first-hand experience as an intern in the Sales &amp; Marketing team.",
+  "shelf.title": "What I read, listen to and watch",
+  "shelf.books": "Books",
+  "shelf.goleman": "Emotional Intelligence",
+  "shelf.carnegie": "Public Speaking and Influencing Men in Business",
+  "shelf.music": "Music",
+  "shelf.music.lead": "From opera to rap, no gaps in between: playing the trumpet taught me to listen to everything.",
+  "shelf.classical": "classical",
+  "shelf.opera": "opera",
+  "shelf.italian": "Italian music",
+  "shelf.italian.sub": "pop &amp; songwriters",
+  "shelf.yt.lead": "The topics I spend the most time on:",
+  "shelf.t.startup": "Startups &amp; entrepreneurship",
+  "shelf.t.ai": "AI &amp; technology",
+  "shelf.t.music": "Music industry",
+  "shelf.t.psy": "Psychology &amp; communication",
 };
 
 const root = document.documentElement;
