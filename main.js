@@ -153,6 +153,7 @@ const EN = {
   "int.excl.kicker": "One of my biggest interests",
   "int.excl.title": "<em>Exclusivity</em>",
   "int.excl.desc": "It's something I pay attention to in everything, from food to clothes to any other choice: I look for what is rare, refined and made with quality. It's no coincidence my thesis is about luxury hospitality.",
+  "skills.stripe": "Stripe (payments &amp; checkout)",
 };
 
 const root = document.documentElement;
