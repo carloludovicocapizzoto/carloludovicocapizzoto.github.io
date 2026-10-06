@@ -350,3 +350,8 @@ strong { font-weight: 600; }
 @media (max-width: 420px) {
   .interests, .skills-grid { grid-template-columns: 1fr; }
 }
+.thesis { margin-top: 8px !important; font-size: 15px; }
+.card-feature-2 { margin-top: 20px; }
+.card-feature-2 .metrics { grid-template-columns: repeat(3, 1fr); }
+.card-sponsors { margin: 0; font-size: 13px; font-weight: 600; color: var(--muted) !important; letter-spacing: .04em; }
+@media (max-width: 420px) { .card-feature-2 .metrics { grid-template-columns: 1fr 1fr; } }
