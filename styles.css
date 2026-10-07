@@ -520,3 +520,14 @@ strong { font-weight: 600; }
 .levia-links .lv-arrow { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--accent); font-size: 18px; }
 .levia-links a:hover .lv-name { color: var(--accent); }
 @media (max-width: 680px) { .levia-links { grid-template-columns: 1fr; } }
+
+/* Titoli dei gruppi (Experience / Extracurricular / Education) più visibili */
+.timeline-label {
+  color: var(--accent) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  letter-spacing: .14em;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--accent);
+  margin-bottom: 4px !important;
+}
