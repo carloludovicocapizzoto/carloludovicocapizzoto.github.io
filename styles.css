@@ -508,3 +508,15 @@ strong { font-weight: 600; }
 .about-text .lead { font-size: clamp(26px, 3vw, 34px); line-height: 1.25; }
 .contact-lead { font-size: clamp(34px, 5.2vw, 60px); }
 .interest-num { font-size: 34px; }
+
+/* Levia: card a tutta larghezza con la lista dei prototipi */
+.card-levia { grid-column: 1 / -1; }
+.card-levia > p { max-width: 46em; }
+.levia-links { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+.levia-links li { border-top: 1px solid var(--line); }
+.levia-links a { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; padding: 14px 0; text-decoration: none; }
+.levia-links .lv-name { font-weight: 600; color: var(--text); }
+.levia-links .lv-desc { grid-column: 1; font-size: 14.5px; color: var(--muted); line-height: 1.45; }
+.levia-links .lv-arrow { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--accent); font-size: 18px; }
+.levia-links a:hover .lv-name { color: var(--accent); }
+@media (max-width: 680px) { .levia-links { grid-template-columns: 1fr; } }
