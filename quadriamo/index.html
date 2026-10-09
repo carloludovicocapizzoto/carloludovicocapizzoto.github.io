@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quadriamo — Your money, in four · 55-20-15-10 budget planner</title>
+  <meta name="description" content="Quadriamo is a budget planner for Excel and Google Sheets built on the 55-20-15-10 rule: buckets that handle real life, leftovers that roll over, currencies, investments and a PAC/DCA tracker. Try it free for a month.">
+  <link rel="canonical" href="https://carloludovicocapizzoto.github.io/quadriamo/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Quadriamo — Your money, in four">
+  <meta property="og:description" content="The 55-20-15-10 budget planner for Excel and Google Sheets. Try it free for a month.">
+  <meta property="og:url" content="https://carloludovicocapizzoto.github.io/quadriamo/">
+  <meta property="og:image" content="https://carloludovicocapizzoto.github.io/quadriamo/img/poster.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#1F2328">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F2328'/%3E%3Crect x='10' y='40' width='22' height='10' rx='2' fill='%23C2410C'/%3E%3Crect x='34' y='40' width='8' height='10' rx='2' fill='%23E8956A'/%3E%3Crect x='44' y='40' width='6' height='10' rx='2' fill='%23F1D9C4'/%3E%3Crect x='52' y='40' width='4' height='10' rx='2' fill='%238A8F98'/%3E%3Ctext x='32' y='33' text-anchor='middle' font-family='Georgia' font-size='26' fill='%23FAF7F2'%3EQ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF7F2; --alt: #F1EBE2; --surface: #FFFDF9; --ink: #1F2328; --text: #1F2328; --muted: #4A4F57;
+      --line: #E6DFD3; --accent: #C2410C; --accent-2: #E8956A; --accent-3: #F1D9C4; --grey: #8A8F98; --on-ink: #FAF7F2;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #14171B; --alt: #1A1E23; --surface: #1F2328; --text: #F1ECE4; --muted: #B5B0A8; --line: #2E333A;
+              --accent: #F07A42; color-scheme: dark; }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 "DM Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 40px); }
+    .serif { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; }
+    .eyebrow { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0 0 12px; }
+    h1, h2, h3 { margin: 0; }
+    h2 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -.01em; }
+    h3 { font-size: 20px; }
+    p { margin: 0; }
+    section { padding: clamp(64px, 10vw, 112px) 0; }
+    .alt { background: var(--alt); }
+
+    /* header */
+    header.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+    .logo { font-family: "DM Serif Display", Georgia, serif; font-size: 28px; text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .top nav { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+    .top nav a { text-decoration: none; }
+    .top nav a:hover { color: var(--accent); }
+
+    /* hero */
+    .hero { padding-top: clamp(56px, 9vw, 96px); }
+    .hero h1 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: clamp(56px, 11vw, 128px); line-height: .95; letter-spacing: -.02em; }
+    .hero h1 em { color: var(--accent); }
+    .hero .lead { font-size: clamp(19px, 2.4vw, 24px); color: var(--muted); max-width: 40em; margin-top: 24px; }
+    .rulebar { display: flex; gap: 6px; height: 14px; margin: 40px 0 0; max-width: 720px; }
+    .rulebar i { border-radius: 4px; }
+    .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 26px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { filter: brightness(1.08); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--text); }
+    .btn[aria-disabled="true"] { opacity: .55; cursor: not-allowed; }
+    .price { font-size: 15px; color: var(--muted); }
+    .price s { opacity: .7; }
+    .note { font-size: 14px; color: var(--muted); margin-top: 12px; }
+
+    /* video */
+    .video { margin-top: clamp(40px, 6vw, 64px); border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #1F2328; box-shadow: 0 24px 60px -30px rgba(31,35,40,.45); }
+    .video video { width: 100%; height: auto; aspect-ratio: 16/9; }
+
+    /* grids */
+    .grid { display: grid; gap: 20px; }
+    .g4 { grid-template-columns: repeat(4, 1fr); }
+    .g3 { grid-template-columns: repeat(3, 1fr); }
+    .g2 { grid-template-columns: repeat(2, 1fr); }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px; }
+    .card p { color: var(--muted); margin-top: 8px; font-size: 16px; }
+    .bucket { border-top: 5px solid var(--c); padding-top: 22px; }
+    .bucket .pct { font-family: "DM Serif Display", Georgia, serif; font-size: 52px; line-height: 1; color: var(--c); }
+    .head { display: grid; gap: 14px; margin-bottom: 40px; max-width: 46em; }
+    .head p { color: var(--muted); font-size: 19px; }
+
+    /* steps */
+    .step { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(24px, 4vw, 56px); align-items: center; padding: 28px 0; }
+    .step + .step { border-top: 1px solid var(--line); }
+    .step .num { font-family: "DM Serif Display", Georgia, serif; font-size: 64px; line-height: 1; color: var(--accent); }
+    .step h3 { font-size: 26px; margin-top: 8px; }
+    .step p { color: var(--muted); margin-top: 10px; }
+    .shot { border-radius: 10px; border: 1px solid var(--line); background: #fff; box-shadow: 0 16px 40px -28px rgba(31,35,40,.5); }
+    .wide-shot { margin-top: 28px; }
+
+    /* table */
+    table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; font-size: 16px; }
+    th, td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--line); }
+    th { background: var(--ink); color: var(--on-ink); font-weight: 700; }
+    td:not(:first-child), th:not(:first-child) { text-align: center; }
+    .yes { color: var(--accent); font-weight: 700; }
+    tr:last-child td { border-bottom: 0; }
+
+    /* faq */
+    details { border-top: 1px solid var(--line); padding: 18px 0; }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { cursor: pointer; font-weight: 700; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    summary::after { content: "+"; color: var(--accent); font-size: 22px; line-height: 1; }
+    details[open] summary::after { content: "–"; }
+    details p { color: var(--muted); margin-top: 10px; max-width: 46em; }
+
+    /* final cta */
+    .final { background: var(--accent); color: #fff; text-align: left; }
+    .final h2 { color: #fff; }
+    .final p { opacity: .9; font-size: 20px; margin-top: 14px; }
+    .final .btn-primary { background: #fff; color: #C2410C; }
+    .final .btn-ghost { color: #fff; border-color: #fff; }
+    .final .price, .final .note { color: #fff; opacity: .85; }
+    footer { padding: 32px 0 48px; font-size: 14px; color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      .g4 { grid-template-columns: repeat(2, 1fr); }
+      .g3, .g2 { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 1fr; }
+      .top nav { display: none; }
+    }
+    @media (max-width: 520px) {
+      .g4 { grid-template-columns: 1fr; }
+      th, td { padding: 12px 10px; font-size: 14px; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="logo" href="#top">Quadriamo<span>.</span></a>
+      <nav aria-label="Page">
+        <a href="#how">How it works</a>
+        <a href="#pro">Pro</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="../">By Carlo L. Capizzoto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">The 55-20-15-10 budget planner · Excel &amp; Google Sheets</p>
+        <h1>Your money,<br><em>in four.</em></h1>
+        <p class="lead">Give every euro a job, and still know where you stand when real life gets messy. Log an expense in seconds; Quadriamo sorts it into the right bucket and shows what's left.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="download/">Download Free</a>
+          <a class="btn btn-ghost" aria-disabled="true" title="Coming soon on Etsy">Get Pro · Coming soon</a>
+          <span class="price">Pro launch price <strong>€14.90</strong> <s>€24.90</s></span>
+        </div>
+        <p class="note">Free: one month to try the method, no sign-up. Works in Excel (Windows, Mac, web).</p>
+        <div class="rulebar" aria-hidden="true">
+          <i style="flex:55;background:var(--accent)"></i><i style="flex:20;background:var(--accent-2)"></i><i style="flex:15;background:var(--accent-3)"></i><i style="flex:10;background:var(--grey)"></i>
+        </div>
+        <div class="video">
+          <video controls preload="metadata" poster="img/poster.webp" playsinline>
+            <source src="quadriamo-tutorial.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="rule">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">The rule</p>
+          <h2>Every euro of income gets one of four jobs</h2>
+          <p>Income is split automatically. Don't love these numbers? Change them in Settings: they just need to add up to 100%.</p>
+        </div>
+        <div class="grid g4">
+          <div class="card bucket" style="--c:var(--accent)"><div class="pct">55%</div><h3>Essentials</h3><p>Rent, bills, groceries, transport.</p></div>
+          <div class="card bucket" style="--c:var(--accent-2)"><div class="pct">20%</div><h3>Quality of Life</h3><p>Eating out, fun, gifts.</p></div>
+          <div class="card bucket" style="--c:#C9A27A"><div class="pct">15%</div><h3>Safety Fund</h3><p>A cushion for the unexpected.</p></div>
+          <div class="card bucket" style="--c:var(--grey)"><div class="pct">10%</div><h3>Investments</h3><p>Money that works for you.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="who">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Who it's for</p>
+          <h2>For anyone who wants their money to have a plan, not just a balance</h2>
+        </div>
+        <div class="grid g4">
+          <div class="card"><h3>Students &amp; first jobs</h3><p>Build the habit early and know how much is really left each month.</p></div>
+          <div class="card"><h3>Young professionals</h3><p>Turn a salary into a safety fund and a monthly investment plan.</p></div>
+          <div class="card"><h3>Freelancers &amp; side gigs</h3><p>Irregular income, each payment sent exactly where you want it.</p></div>
+          <div class="card"><h3>Living or travelling abroad</h3><p>Spend in any currency, see it in yours at the daily rate.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="how">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">How it works</p>
+          <h2>Set it up once. Then it's four things a row.</h2>
+        </div>
+        <div class="step">
+          <div><div class="num">1</div><h3>Pick your country</h3><p>Your currency is set for you and every amount follows it. Then check the rule, your payday and your categories.</p></div>
+          <img class="shot" src="img/start.webp" alt="Start Here sheet with the country picker" loading="lazy" width="1800" height="1187">
+        </div>
+        <div class="step">
+          <div><div class="num">2</div><h3>Log in seconds</h3><p>Date, description, category, amount. The bucket and the type fill in on their own; recurring bills appear by themselves.</p></div>
+          <img class="shot" src="img/log.webp" alt="Transaction log with automatic bucket and type" loading="lazy" width="1270" height="414">
+        </div>
+        <div class="step">
+          <div><div class="num">3</div><h3>See what's left</h3><p>Every bucket shows what came in, what went out and what remains. Leftovers roll into next month; the checks flag mistakes.</p></div>
+          <img class="shot" src="img/buckets.webp" alt="Summary, checks and buckets for the month" loading="lazy" width="950" height="405">
+        </div>
+      </div>
+    </section>
+
+    <section id="real-life">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Built for real life</p>
+          <h2>One optional column keeps the rule honest when plans change</h2>
+        </div>
+        <div class="grid g2">
+          <div class="card"><h3>Paid from another bucket</h3><p>Big grocery run paid with your Quality of Life money? Pick that bucket in <strong>Paid from</strong>. Groceries still count as groceries; the money leaves the right bucket.</p></div>
+          <div class="card"><h3>Extra income, one destination</h3><p>A bonus or a freelance payment can go entirely to one bucket, like Investments. Leave it blank and it's split 55-20-15-10.</p></div>
+        </div>
+        <img class="shot wide-shot" src="img/month.webp" alt="A full month: log on the left, summary and buckets on the right" loading="lazy" width="1800" height="775">
+      </div>
+    </section>
+
+    <section class="alt" id="pro">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Quadriamo Pro</p>
+          <h2>The whole year, your investments and every currency</h2>
+          <p>Twelve months that talk to each other, a Year Overview to compare them, and an Investments sheet for your portfolio, deposit accounts and monthly plan (PAC / DCA).</p>
+        </div>
+        <img class="shot" src="img/year.webp" alt="Year Overview with monthly table and chart" loading="lazy" width="1800" height="435">
+        <img class="shot wide-shot" src="img/investments.webp" alt="Investments sheet with portfolio and returns" loading="lazy" width="1800" height="435">
+        <div class="grid g3" style="margin-top:28px">
+          <div class="card"><h3>Daily exchange rates</h3><p>Spend in dollars or pounds; it's converted automatically (Excel for Microsoft 365 and Google Sheets; manual rate elsewhere).</p></div>
+          <div class="card"><h3>Portfolio &amp; deposits</h3><p>Value, gain and return for ETFs, stocks and crypto; interest to date on deposit accounts.</p></div>
+          <div class="card"><h3>Plan vs reality</h3><p>Project your monthly investing, then check each month what you actually put in.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Free and Pro</p>
+          <h2>Try the method for a month, keep it for the year</h2>
+        </div>
+        <table>
+          <thead><tr><th>Feature</th><th>Free</th><th>Pro · €14.90</th></tr></thead>
+          <tbody>
+            <tr><td>Buckets, “Paid from”, built-in checks, your currency</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Months · transactions per month</td><td>1 · 40</td><td>12 · 200</td></tr>
+            <tr><td>Leftovers roll over · recurring payments</td><td>—</td><td class="yes">✓</td></tr>
+            <tr><td>Other currencies with daily rates</td><td>—</td><td class="yes">✓</td></tr>
+            <tr><td>Investments, deposits, PAC / DCA tracker</td><td>—</td><td class="yes">✓</td></tr>
+            <tr><td>Year Overview with charts</td><td>—</td><td class="yes">✓</td></tr>
+            <tr><td>Google Sheets version</td><td>—</td><td class="yes">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="alt" id="faq">
+      <div class="wrap">
+        <div class="head"><p class="eyebrow">FAQ</p><h2>Questions</h2></div>
+        <details><summary>Which programs does it work in?</summary><p>Excel 2016 or newer on Windows and Mac, and Excel on the web. Pro also comes as a Google Sheets version you copy into your Drive with one click.</p></details>
+        <details><summary>Are there macros?</summary><p>No. Everything is formulas, so there are no security warnings and nothing to enable.</p></details>
+        <details><summary>Can I change the 55-20-15-10 rule?</summary><p>Yes. Percentages, bucket names, categories and the day your month starts are all in Settings.</p></details>
+        <details><summary>Do live prices and exchange rates always update?</summary><p>They update by themselves in Google Sheets and in Excel for Microsoft 365. In older Excel versions you type the rate or price once in the manual column.</p></details>
+        <details><summary>Is this financial advice?</summary><p>No. Quadriamo is a budgeting tool. Investment projections use a fixed expected return and are not a promise of future results.</p></details>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <h2>Start free. Upgrade when it clicks.</h2>
+        <p>One month to try the method. Twelve to make it a habit.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="download/">Download Free</a>
+          <a class="btn btn-ghost" aria-disabled="true">Get Pro · Coming soon</a>
+          <span class="price">€14.90 at launch</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Quadriamo · made by <a href="../">Carlo Ludovico Capizzoto</a></p>
+      <p>For personal use. A budgeting tool, not financial advice.</p>
+    </div>
+  </footer>
+</body>
+</html>

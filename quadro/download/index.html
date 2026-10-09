@@ -3,90 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Quadro download · Quadro</title>
+  <title>Quadro is now Quadriamo</title>
   <meta name="robots" content="noindex">
-  <link rel="canonical" href="https://carloludovicocapizzoto.github.io/quadro/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --bg:#FAF7F2; --alt:#F1EBE2; --surface:#FFFDF9; --text:#1F2328; --muted:#4A4F57; --line:#E6DFD3; --accent:#C2410C; color-scheme: light; }
-    @media (prefers-color-scheme: dark) { :root { --bg:#14171B; --alt:#1A1E23; --surface:#1F2328; --text:#F1ECE4; --muted:#B5B0A8; --line:#2E333A; --accent:#F07A42; color-scheme: dark; } }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 "DM Sans", system-ui, sans-serif; }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 56px clamp(16px, 5vw, 32px) 72px; }
-    .logo { font-family: "DM Serif Display", Georgia, serif; font-size: 28px; text-decoration: none; color: inherit; }
-    .logo span { color: var(--accent); }
-    h1 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: clamp(40px, 8vw, 64px); line-height: 1; margin: 48px 0 14px; }
-    h1 em { color: var(--accent); }
-    h2 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: 28px; margin: 0 0 14px; }
-    p { margin: 0; }
-    a { color: var(--accent); }
-    .btn { color: var(--text); }
-    .muted { color: var(--muted); }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 50px; padding: 0 22px; border-radius: 8px; font: 700 15px "DM Sans", sans-serif; text-decoration: none; cursor: pointer; border: 1.5px solid var(--text); background: transparent; color: var(--text); }
-    .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 26px; margin-top: 28px; }
-    ol { margin: 0; padding-left: 22px; }
-    li { margin: 8px 0; }
-    .share { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-    .note { font-size: 14px; color: var(--muted); margin-top: 10px; min-height: 1.4em; }
-    footer { margin-top: 40px; font-size: 14px; color: var(--muted); }
-    @media (max-width: 520px) { .btn { width: 100%; } }
-  </style>
+  <link rel="canonical" href="https://carloludovicocapizzoto.github.io/quadriamo/download/">
+  <meta http-equiv="refresh" content="0; url=../../quadriamo/download/">
+  <script>location.replace("../../quadriamo/download/" + location.search + location.hash);</script>
+  <style>body{margin:0;background:#FAF7F2;color:#1F2328;font:17px/1.6 system-ui,sans-serif}@media (prefers-color-scheme:dark){body{background:#14171B;color:#F1ECE4}}p{max-width:640px;margin:64px auto;padding:0 16px}a{color:#C2410C}</style>
 </head>
 <body>
-  <div class="wrap">
-    <a class="logo" href="../">Quadro<span>.</span></a>
-    <h1>Your download<br><em>has started.</em></h1>
-    <p class="muted">If it didn't, <a href="../Quadro-Free.xlsx" download>click here to download Quadro Free</a>.</p>
-
-    <div class="card">
-      <h2>Up and running in five minutes</h2>
-      <ol>
-        <li><b>Start Here:</b> pick your country, your currency is set for you.</li>
-        <li><b>Month:</b> in Settings choose the month to track and the day it starts (e.g. your payday).</li>
-        <li><b>Log:</b> one row per transaction in the yellow cells. Then check what's left in every bucket.</li>
-      </ol>
-    </div>
-
-    <div class="card">
-      <h2>Know someone who'd like it?</h2>
-      <p class="muted">Quadro is free to try. Sharing it is the best way to help a small, independent project.</p>
-      <div class="share">
-        <a class="btn" id="share-linkedin" target="_blank" rel="noopener">Share on LinkedIn</a>
-        <a class="btn" id="share-whatsapp" target="_blank" rel="noopener">Send on WhatsApp</a>
-        <button class="btn" id="copy-link" type="button">Copy link</button>
-      </div>
-      <p class="note" id="copy-note" aria-live="polite"></p>
-    </div>
-
-    <div class="card">
-      <h2>Want the whole year?</h2>
-      <p class="muted">Quadro Pro adds all 12 months, leftovers that roll over, recurring payments, other currencies, investments and PAC tracking, the Year Overview and a Google Sheets version.</p>
-      <div class="share"><a class="btn btn-primary" href="../#pricing">See Quadro Pro</a></div>
-    </div>
-
-    <footer>Quadro · made by <a href="../../">Carlo Ludovico Capizzoto</a> · A budgeting tool, not financial advice.</footer>
-  </div>
-
-  <script>
-    // Avvia il download appena la pagina si apre (ogni visita a questa pagina = un download, utile per contarli)
-    window.addEventListener("load", function () {
-      var a = document.createElement("a");
-      a.href = "../Quadro-Free.xlsx"; a.download = "Quadro-Free.xlsx";
-      document.body.appendChild(a); a.click(); a.remove();
-    });
-    var url = "https://carloludovicocapizzoto.github.io/quadro/";
-    var msg = "I'm trying Quadro, a free budget planner for Excel based on the 55-20-15-10 rule: ";
-    document.getElementById("share-linkedin").href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
-    document.getElementById("share-whatsapp").href = "https://wa.me/?text=" + encodeURIComponent(msg + url);
-    document.getElementById("copy-link").addEventListener("click", function () {
-      var note = document.getElementById("copy-note");
-      (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject())
-        .then(function () { note.textContent = "Link copied."; })
-        .catch(function () { note.textContent = url; });
-    });
-  </script>
+  <p>Quadro is now <b>Quadriamo</b>. <a href="../../quadriamo/download/">Continue to the new page →</a></p>
 </body>
 </html>
