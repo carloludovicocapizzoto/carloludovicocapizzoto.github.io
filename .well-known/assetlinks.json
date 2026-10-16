@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.quadriamo.app",
+      "sha256_cert_fingerprints": [
+        "42:D0:99:3E:16:E7:90:A8:08:3C:42:D7:A9:82:EC:A9:C4:BC:FE:26:9E:38:21:01:5E:EB:5F:AB:76:4D:21:E9"
+      ]
+    }
+  }
+]
