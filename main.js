@@ -204,6 +204,14 @@ const IT = {
   "lv.price.d": "Costi, prezzi e investimento",
   "lv.ops.n": "Levia Ops",
   "lv.ops.d": "L'app interna per il team di Levia",
+  "ww.label": "Ho studiato e lavorato con",
+  "cta.about": "Cerchi una persona così per il tuo team?",
+  "cta.exp": "Vuoi sapere di più su questi ruoli?",
+  "cta.proj": "Hai un progetto o un ruolo in mente?",
+  "cta.skills": "Ti servono queste competenze nel team?",
+  "cta.int": "Ti va di parlarne?",
+  "cta.talk": "Contattami",
+  "cta.cvshort": "Scarica il CV",
 };
 
 const root = document.documentElement;

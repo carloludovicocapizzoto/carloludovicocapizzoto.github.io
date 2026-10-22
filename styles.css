@@ -531,3 +531,17 @@ strong { font-weight: 600; }
   border-bottom: 1px solid var(--accent);
   margin-bottom: 4px !important;
 }
+
+/* Fascia "Studied & worked with" */
+.worked-with { margin-top: clamp(48px, 8vh, 80px); padding-top: 28px; border-top: 1px solid var(--line); }
+.worked-label { margin: 0 0 16px; font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.worked-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 14px 40px; align-items: baseline; }
+.worked-list li { font-family: var(--serif); font-size: clamp(20px, 2.2vw, 26px); color: var(--muted); letter-spacing: -.005em; }
+
+/* Invito al contatto in fondo alle sezioni */
+.section-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap;
+  margin-top: 48px; padding: 20px 24px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.section-cta p { margin: 0; font-family: var(--serif); font-size: 22px; color: var(--text); }
+.section-cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-sm { height: 42px; padding: 0 18px; font-size: 14px; }
+@media (max-width: 520px) { .section-cta-actions, .section-cta-actions .btn { width: 100%; } }
