@@ -545,3 +545,10 @@ strong { font-weight: 600; }
 .section-cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .btn-sm { height: 42px; padding: 0 18px; font-size: 14px; }
 @media (max-width: 520px) { .section-cta-actions, .section-cta-actions .btn { width: 100%; } }
+
+/* Loghi accanto ai nomi della fascia "Studied & worked with" */
+.worked-list li { display: inline-flex; align-items: center; gap: 12px; }
+.ww-logo { width: 40px; height: 40px; flex: none; display: inline-flex; align-items: center; justify-content: center;
+  background: #ffffff; border-radius: 9px; overflow: hidden; box-shadow: 0 0 0 1px var(--line); }
+.ww-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.ww-mono { font-family: var(--mono); font-size: 14px; font-weight: 500; color: #0f1b2d; letter-spacing: .04em; }
